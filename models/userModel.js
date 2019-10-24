@@ -1,4 +1,4 @@
-const db = require("./conn");
+const db = require("./conn"),
 bcrypt = require("bcryptjs");
 
 class User {
@@ -54,7 +54,8 @@ class User {
         }catch(err) {
             return err.message;
         }
-    }  
+    }
+    
 }
 
 module.exports = User;

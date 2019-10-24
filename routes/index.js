@@ -1,4 +1,5 @@
 const express = require('express'),
+bcrypt = require("bcryptjs");
  router = express.Router();
 
 const UserModel = require("../models/userModel");
@@ -13,6 +14,11 @@ const UserModel = require("../models/userModel");
       }
     });
   });
+
+  router.get('/logout', async (req, res, next) => {
+    req.session.destroy();
+    res.status(200).redirect('/');
+  })
   
   router.get("/logout", (req, res, next) => {
     req.session.destroy();
