@@ -27,7 +27,7 @@ class User {
                     FROM users WHERE email = $1;`, 
             [this.email]);
 
-            console.log("login this:", this);
+            // console.log("login this:", this);
 
             const isValid = this.checkPassword(response.password);
 

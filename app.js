@@ -7,7 +7,8 @@ const express = require("express"),
     fileStore = require("session-file-store")(session);
 
 const indexRouter = require("./routes/index"),
-        wineRouter = require("./routes/wine");
+        wineRouter = require("./routes/wine"), 
+        buyerRouter = require("./routes/buyer"); 
     // usersRouter = require("./routes/users");
 
     require('dotenv').config();
@@ -36,6 +37,7 @@ app.use(
 
 app.use("/", indexRouter);
 app.use("/wine", wineRouter);
+app.use("/buyer", buyerRouter);
 // app.use("/users", usersRouter);
 
 module.exports = app;
