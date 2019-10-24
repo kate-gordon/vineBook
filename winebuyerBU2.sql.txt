@@ -21,21 +21,21 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: buyer; Type: TABLE; Schema: public; Owner: tkathryngordon
+-- Name: users; Type: TABLE; Schema: public; Owner: tkathryngordon
 --
 
-CREATE TABLE public.buyer (
+CREATE TABLE public.users (
     id integer NOT NULL,
     first_name character varying,
     last_name character varying,
     company character varying,
     email character varying,
-    wine_list character varying,
-    password character varying
+    password character varying,
+    role integer
 );
 
 
-ALTER TABLE public.buyer OWNER TO tkathryngordon;
+ALTER TABLE public.users OWNER TO tkathryngordon;
 
 --
 -- Name: buyer_id_seq; Type: SEQUENCE; Schema: public; Owner: tkathryngordon
@@ -56,31 +56,27 @@ ALTER TABLE public.buyer_id_seq OWNER TO tkathryngordon;
 -- Name: buyer_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: tkathryngordon
 --
 
-ALTER SEQUENCE public.buyer_id_seq OWNED BY public.buyer.id;
+ALTER SEQUENCE public.buyer_id_seq OWNED BY public.users.id;
 
 
 --
--- Name: rep; Type: TABLE; Schema: public; Owner: tkathryngordon
+-- Name: user_wine; Type: TABLE; Schema: public; Owner: tkathryngordon
 --
 
-CREATE TABLE public.rep (
+CREATE TABLE public.user_wine (
     id integer NOT NULL,
-    first_name character varying,
-    last_name character varying,
-    company character varying,
-    email character varying,
-    password character varying,
-    buyer_list character varying
+    user_id integer,
+    wine_id integer
 );
 
 
-ALTER TABLE public.rep OWNER TO tkathryngordon;
+ALTER TABLE public.user_wine OWNER TO tkathryngordon;
 
 --
--- Name: rep_id_seq; Type: SEQUENCE; Schema: public; Owner: tkathryngordon
+-- Name: wine_list_id_seq; Type: SEQUENCE; Schema: public; Owner: tkathryngordon
 --
 
-CREATE SEQUENCE public.rep_id_seq
+CREATE SEQUENCE public.wine_list_id_seq
     AS integer
     START WITH 1
     INCREMENT BY 1
@@ -89,13 +85,13 @@ CREATE SEQUENCE public.rep_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.rep_id_seq OWNER TO tkathryngordon;
+ALTER TABLE public.wine_list_id_seq OWNER TO tkathryngordon;
 
 --
--- Name: rep_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: tkathryngordon
+-- Name: wine_list_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: tkathryngordon
 --
 
-ALTER SEQUENCE public.rep_id_seq OWNED BY public.rep.id;
+ALTER SEQUENCE public.wine_list_id_seq OWNED BY public.user_wine.id;
 
 
 --
@@ -138,17 +134,17 @@ ALTER SEQUENCE public.wines_id_seq OWNED BY public.wines.id;
 
 
 --
--- Name: buyer id; Type: DEFAULT; Schema: public; Owner: tkathryngordon
+-- Name: user_wine id; Type: DEFAULT; Schema: public; Owner: tkathryngordon
 --
 
-ALTER TABLE ONLY public.buyer ALTER COLUMN id SET DEFAULT nextval('public.buyer_id_seq'::regclass);
+ALTER TABLE ONLY public.user_wine ALTER COLUMN id SET DEFAULT nextval('public.wine_list_id_seq'::regclass);
 
 
 --
--- Name: rep id; Type: DEFAULT; Schema: public; Owner: tkathryngordon
+-- Name: users id; Type: DEFAULT; Schema: public; Owner: tkathryngordon
 --
 
-ALTER TABLE ONLY public.rep ALTER COLUMN id SET DEFAULT nextval('public.rep_id_seq'::regclass);
+ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.buyer_id_seq'::regclass);
 
 
 --
@@ -159,18 +155,18 @@ ALTER TABLE ONLY public.wines ALTER COLUMN id SET DEFAULT nextval('public.wines_
 
 
 --
--- Data for Name: buyer; Type: TABLE DATA; Schema: public; Owner: tkathryngordon
+-- Data for Name: user_wine; Type: TABLE DATA; Schema: public; Owner: tkathryngordon
 --
 
-COPY public.buyer (id, first_name, last_name, company, email, wine_list, password) FROM stdin;
+COPY public.user_wine (id, user_id, wine_id) FROM stdin;
 \.
 
 
 --
--- Data for Name: rep; Type: TABLE DATA; Schema: public; Owner: tkathryngordon
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: tkathryngordon
 --
 
-COPY public.rep (id, first_name, last_name, company, email, password, buyer_list) FROM stdin;
+COPY public.users (id, first_name, last_name, company, email, password, role) FROM stdin;
 \.
 
 
@@ -216,10 +212,10 @@ SELECT pg_catalog.setval('public.buyer_id_seq', 1, false);
 
 
 --
--- Name: rep_id_seq; Type: SEQUENCE SET; Schema: public; Owner: tkathryngordon
+-- Name: wine_list_id_seq; Type: SEQUENCE SET; Schema: public; Owner: tkathryngordon
 --
 
-SELECT pg_catalog.setval('public.rep_id_seq', 1, false);
+SELECT pg_catalog.setval('public.wine_list_id_seq', 1, false);
 
 
 --
@@ -230,19 +226,19 @@ SELECT pg_catalog.setval('public.wines_id_seq', 26, true);
 
 
 --
--- Name: buyer buyer_pkey; Type: CONSTRAINT; Schema: public; Owner: tkathryngordon
+-- Name: users buyer_pkey; Type: CONSTRAINT; Schema: public; Owner: tkathryngordon
 --
 
-ALTER TABLE ONLY public.buyer
+ALTER TABLE ONLY public.users
     ADD CONSTRAINT buyer_pkey PRIMARY KEY (id);
 
 
 --
--- Name: rep rep_pkey; Type: CONSTRAINT; Schema: public; Owner: tkathryngordon
+-- Name: user_wine wine_list_pkey; Type: CONSTRAINT; Schema: public; Owner: tkathryngordon
 --
 
-ALTER TABLE ONLY public.rep
-    ADD CONSTRAINT rep_pkey PRIMARY KEY (id);
+ALTER TABLE ONLY public.user_wine
+    ADD CONSTRAINT wine_list_pkey PRIMARY KEY (id);
 
 
 --
@@ -251,6 +247,22 @@ ALTER TABLE ONLY public.rep
 
 ALTER TABLE ONLY public.wines
     ADD CONSTRAINT wines_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: user_wine userId; Type: FK CONSTRAINT; Schema: public; Owner: tkathryngordon
+--
+
+ALTER TABLE ONLY public.user_wine
+    ADD CONSTRAINT "userId" FOREIGN KEY (user_id) REFERENCES public.users(id);
+
+
+--
+-- Name: user_wine wine_list_wine_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: tkathryngordon
+--
+
+ALTER TABLE ONLY public.user_wine
+    ADD CONSTRAINT wine_list_wine_id_fkey FOREIGN KEY (wine_id) REFERENCES public.wines(id);
 
 
 --
