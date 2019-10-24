@@ -2,7 +2,7 @@ const express = require('express'),
   bcrypt = require("bcryptjs"),
   router = express.Router();
 
-  const UserModel = require("../models/buyerModel");
+  const UserModel = require("../models/userModel");
 
 router.get('/login', async (req, res, next) => {
   res.render("template", {
