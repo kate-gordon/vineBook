@@ -45,7 +45,11 @@ class User {
 
     async save() {
         try {
-            const response = await db.one(`INSERT INTO users (first_name, last_name, company, email, password, role) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id;`, [this.first_name, this.last_name, this.company, this.email, this.password, this.role]);
+            const response = await db.one(`INSERT INTO users 
+                (first_name, last_name, company, email, password, role) 
+                VALUES ($1, $2, $3, $4, $5, $6) 
+                RETURNING id;`, 
+                [this.first_name, this.last_name, this.company, this.email, this.password, this.role]);
         return response;
         }catch(err) {
             return err.message;

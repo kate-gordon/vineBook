@@ -16,7 +16,19 @@ const express = require('express'),
     });
   });
 
+  router.get("/", async (req, res, next) => {
+    const wineUser = await WineUserModel.userList();
 
+    res.render("template", {
+        locals: {
+            title: "Wine User",
+            wineData: wineUser
+        },
+        partials: {
+            partial: "partial-buyer"
+        }
+    });
+});
   module.exports = router;
 
   

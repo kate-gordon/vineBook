@@ -10,6 +10,7 @@ const indexRouter = require("./routes/index"),
         wineRouter = require("./routes/wine"), 
         buyerRouter = require("./routes/buyer"); 
     // usersRouter = require("./routes/users");
+        buyerRouter = require("./routes/buyer");
 
     require('dotenv').config();
 
