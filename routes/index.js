@@ -51,7 +51,7 @@ const UserModel = require("../models/userModel");
   router.post("/", async (req, res, next) => {
     const { email, password } = req.body;
   
-    const buyer = new UserModel(null, null, null, email, password, null);
+    const buyer = new UserModel(null, null, email, password, null, null);
   
     const response = await buyer.login();
     console.log("response is ", response);

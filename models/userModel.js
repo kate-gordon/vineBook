@@ -17,11 +17,7 @@ class User {
 
     async login() {
         try {
-            const response = await db.one(
-                `SELECT first_name, last_name, company, email, password, role 
-                    FROM users 
-                    WHERE email = $1;`, 
-            [this.email]);
+            const response = await db.one(`SELECT first_name, last_name, company, password, role FROM users WHERE email = $1`,[this.email]);
             console.log("response is: ", response);
 
             const isValid = this.checkPassword(response.password);
