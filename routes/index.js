@@ -52,9 +52,7 @@ const UserModel = require("../models/userModel");
     const { email, password } = req.body;
   
     const buyer = new UserModel(null, null, email, password, null, null);
-  
     const response = await buyer.login();
-    console.log("response is ", response);
   
     if (!! response.isValid) {
       const { id, first_name, last_name } = response;
