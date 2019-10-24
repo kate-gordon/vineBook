@@ -1,9 +1,31 @@
 const express = require('express'),
   router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+  router.get('/', async (req, res, next) => {
+    res.render("template", {
+      locals: {
+        title: "Login",
+      },
+      partials: {
+        partial: "partial-login"
+      }
+    });
+  });
+  
+  router.get("/logout", (req, res, next) => {
+    req.session.destroy();
+    req.sendStatus(200).redirect("/");
+  });
+  
+  router.get("/signup", async (req, res, next) => {
+    res.render("template", {
+      locals: {
+        title: "Sign-Up"
+      },
+      partials: {
+        partial: "partial-signup"
+      }
+    });
+  });
 
 module.exports = router;

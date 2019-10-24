@@ -4,31 +4,8 @@ const express = require('express'),
 
   const UserModel = require("../models/userModel");
 
-router.get('/login', async (req, res, next) => {
-  res.render("template", {
-    locals: {
-      title: "Login",
-    },
-    partials: {
-      partial: "partial-buyer"
-    }
-  });
-});
-
-router.get("/logout", (req, res, next) => {
-  req.session.destroy();
-  req.sendStatus(200).redirect("/");
-});
-
-router.get("/signup", async (req, res, next) => {
-  res.render("template", {
-    locals: {
-      title: "Sign-Up"
-    },
-    partials: {
-      partial: "partial-buyer"
-    }
-  });
-});
+router.post("/signup", async (req, res, next) => {
+  const { first_name, last_name, email_address } = req.body;
+})
 
 module.exports = router;

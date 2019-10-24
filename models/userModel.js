@@ -14,7 +14,7 @@ class User {
         try {
             const response = await db.one(
                 `SELECT first_name, last_name, password, company 
-                    FROM buyer 
+                    FROM user 
                     WHERE email = $1`, 
             [this.email_address]);
             console.log("response is: ", response);
@@ -25,7 +25,7 @@ class User {
 
     async save() {
         try {
-            const response = await db.one(`INSERT INTO buyer (first_name, last_name, email, password, company) VALUES ($1, $2, $3, $4, $5) RETURNING id;`, [this.first_name, this.last_name, this.last_name, this.email_address, this.password, this.company]);
+            const response = await db.one(`INSERT INTO user (first_name, last_name, email, password, company) VALUES ($1, $2, $3, $4, $5) RETURNING id;`, [this.first_name, this.last_name, this.last_name, this.email_address, this.password, this.company]);
         return response;
         }catch(err) {
             return err.message;
