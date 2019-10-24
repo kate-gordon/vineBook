@@ -20,3 +20,5 @@ class WineList {
         }
     }
 }
+
+module.exports = WineList; 

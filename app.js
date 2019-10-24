@@ -6,7 +6,8 @@ const express = require("express"),
     session = require("express-session"),
     fileStore = require("session-file-store")(session);
 
-const indexRouter = require("./routes/index");
+const indexRouter = require("./routes/index"),
+        wineRouter = require("./routes/wine");
     // usersRouter = require("./routes/users");
 
     require('dotenv').config();
@@ -28,12 +29,13 @@ app.use(
         secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: true,
-        is_logged_in: false,
+        // is_logged_in: false,
     })
 );
 
 
 app.use("/", indexRouter);
+app.use("/wine", wineRouter);
 // app.use("/users", usersRouter);
 
 module.exports = app;
