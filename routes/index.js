@@ -32,12 +32,12 @@ const UserModel = require("../models/userModel");
 
   
   router.post("/signup", async (req, res, next) => {
-    const { first_name, last_name, email_address, company, role } = req.body;
+    const { first_name, last_name, email, company, role } = req.body;
   
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(req.body.password, salt);
   
-    const buyer = new UserModel(first_name, last_name, email_address, hash, company, role);
+    const buyer = new UserModel(first_name, last_name, email, hash, company, role);
   
     const addBuyer = await buyer.save();
   
@@ -49,11 +49,12 @@ const UserModel = require("../models/userModel");
   });
   
   router.post("/", async (req, res, next) => {
-    const { email_address, password } =req.body;
+    const { email, password } = req.body;
   
-    const buyer = new UserModel(null, null, email_address, password, null, null, null);
+    const buyer = new UserModel(null, null, null, email, password, null);
   
     const response = await buyer.login();
+    console.log("response is ", response);
   
     if (!! response.isValid) {
       const { id, first_name, last_name } = response;

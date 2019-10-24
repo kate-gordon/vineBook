@@ -18,9 +18,9 @@ class User {
     async login() {
         try {
             const response = await db.one(
-                `SELECT first_name, last_name, password, company, role 
+                `SELECT first_name, last_name, company, email, password, role 
                     FROM users 
-                    WHERE email = $1`, 
+                    WHERE email = $1;`, 
             [this.email]);
             console.log("response is: ", response);
 
