@@ -12,7 +12,8 @@ router.get("/", async (req, res, next) => {
         locals: {
             title: "Buyer List",
             userData: userInfo,
-            is_logged_in: req.session.is_logged_in
+            is_logged_in: req.session.is_logged_in,
+            id: req.session.user_id,
         },
         partials: {
             partial: "partial-rep"
@@ -23,13 +24,11 @@ router.get("/", async (req, res, next) => {
 router.get('/:user_id', async (req, res, next) => {
     const { user_id } = req.params;
     const buyer = await userModel.getById(user_id);
-    console.log('buyer is: ', buyer)
 
     const userListData = await userListModel.myList(user_id);
-    console.log("User Data: ", userListData);
     res.status(200).render("template", {
       locals: {
-        title: "My Wine List",
+        title: "",
         Data: buyer, userListData,
         is_logged_in: req.session.is_logged_in,
         id: req.session.user_id

@@ -23,7 +23,8 @@ class UserList {
     static async getUserInfo() {
         try {
             const response = await db.any(
-                `SELECT * FROM users;`);
+                `SELECT * FROM users
+                WHERE role = 'buyer';`);
             
             console.log("response is ", response);
             return response;
