@@ -32,6 +32,18 @@ class UserList {
         } catch(err) {
             return err.message; 
         }
+    }     
+    static async getUserInfo() {
+        try {
+            const response = await db.any(
+                `SELECT * FROM users;`);
+            
+            console.log("response is ", response);
+            return response;
+
+        } catch(err) {
+            return err.message;
+        }
     }
 }
 

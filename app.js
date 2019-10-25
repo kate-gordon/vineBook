@@ -8,7 +8,7 @@ const express = require("express"),
 
 const indexRouter = require("./routes/index"),
         masterListRouter = require("./routes/masterlist"), 
-        buyerRouter = require("./routes/buyerList"), 
+        buyerRouter = require("./routes/buyerList"),
         repRouter = require("./routes/rep"); 
     
 
@@ -27,6 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(
     session({
+        
         secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: true,
