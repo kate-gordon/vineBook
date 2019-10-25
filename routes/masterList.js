@@ -1,9 +1,9 @@
 const express = require("express"),
     router = express.Router(),
-    WineModel = require("../models/wineModel");
+    UserListModel = require("../models/userListModel");
 
 router.get("/", async (req, res, next) => {
-    const wineList = await WineModel.getAllWineData();
+    const wineList = await UserListModel.getAllWineData();
 
     res.render("template", {
         locals: {

@@ -7,7 +7,7 @@ const express = require("express"),
     fileStore = require("session-file-store")(session);
 
 const indexRouter = require("./routes/index"),
-        wineRouter = require("./routes/wine"), 
+        masterListRouter = require("./routes/masterlist"), 
         buyerRouter = require("./routes/buyer"); 
     // usersRouter = require("./routes/users");
 
@@ -36,7 +36,7 @@ app.use(
 
 
 app.use("/", indexRouter);
-app.use("/wine", wineRouter);
+app.use("/masterList", masterListRouter);
 app.use("/buyer", buyerRouter);
 
 module.exports = app;

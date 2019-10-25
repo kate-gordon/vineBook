@@ -19,6 +19,14 @@ class WineList {
             return err.message;
         }
     }
+
+    async getWineName() {
+        try {
+            const response = await db.any(`SELECT `)
+        }catch(err) {
+            return err.message;
+        }
+    }
 }
 
 module.exports = WineList; 
