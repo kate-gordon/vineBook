@@ -69,7 +69,7 @@ const UserModel = require("../models/userModel");
       req.session.first_name = first_name;
       req.session.last_name = last_name;
       req.session.user_id = id;
-      res.status(200).redirect("/");
+      res.status(200).redirect("/masterList");
     } else {
       res.sendStatus(401);
     }

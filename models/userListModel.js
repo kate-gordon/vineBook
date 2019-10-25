@@ -18,7 +18,8 @@ class UserList {
         } catch(err) {
             return err.message;
         }
-    }    
+    }
+       
     static async getUserInfo() {
         try {
             const response = await db.any(
