@@ -1,0 +1,30 @@
+
+<table class="table">
+        <thead>
+            <tr>
+                <th>Producer</th>
+                <th>Varietals</th>
+                <th>Region</th>
+                <th>Country</th>
+                <th>Vintage</th>
+                <th>Checked?</th>
+            </tr>
+        </thead>
+        <tbody>
+        ${wineData.map(wine => `
+            <tr>
+                <td>${wine.producer}</td> 
+                <td>${wine.varietals}</td> 
+                <td>${wine.region}</td> 
+                <td>${wine.country}</td> 
+                <td>${wine.year}</td>
+                <td><input type="radio"> check</input></td>
+            </tr>
+        `).join('')}
+        </tbody>
+    </table>
+
+ 
+        
+
+

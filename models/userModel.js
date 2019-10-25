@@ -55,7 +55,6 @@ class User {
             return err.message;
         }
     }
-    
 }
 
 module.exports = User;

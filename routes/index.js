@@ -70,6 +70,7 @@ const UserModel = require("../models/userModel");
     } else {
       res.sendStatus(401);
     }
-  });
+  }
+  );
 
 module.exports = router;
