@@ -15,7 +15,8 @@ const express = require('express'),
       locals: {
         title: "My Wine List",
         Data: buyer, userListData,
-        is_logged_in: req.session.is_logged_in  
+        is_logged_in: req.session.is_logged_in,
+        id: req.session.user_id
       },
       partials: {
         partial: "partial-buyerList"
