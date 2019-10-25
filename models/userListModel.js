@@ -1,19 +1,17 @@
 const db = require("./conn");
 
 class UserList {
-    constructor(user_id, wine_id) {
-        this.user_id = user_id;
-        this.wine_id = wine_id;
+    constructor(id, name) {
+        this.id = id;
+        this.first_name = first_name;
     }
-    async myList() { 
+    static async myList(id) { 
         try {
             const response = await db.any( 
-                `SELECT *
-                FROM user_wine 
-                INNER JOIN wines 
-                ON wines.id = user_wine.wine_id 
-                INNER JOIN users 
-                ON users.id = user_wine.user_id; 
+                `SELECT * FROM user_wine
+                INNER JOIN wines
+                ON user_wine.wine_id = wines.id
+                WHERE user_id = ${id};
                 `)
             console.log("response", response);
             return response;  
