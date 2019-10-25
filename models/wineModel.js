@@ -20,15 +20,28 @@ class WineList {
         }
     }
 
-    async addUserWine(id) {
-        const addWine = (`INSERT INTO user_wine
-            (user_id, wine_id) 
-            VALUES ($1, $2) 
-            RETURNING id`, [this.user_id, this.wine_id]);
+    static async getWineById(id) {
+        try{
+            const response = await db.one(
+                `SELECT * FROM wines WHERE id = ${id};`
+            );
+            console.log("ID is ", response);
+            return response
+        }catch(err){
+            return err.message;
+        }
+    }
+
+    static async addUserWine(userId, wine_id) {
 
         try {
-            const response = await db.any(addWine);
-            console.log("response is ", response);
+            const response = await db.one(`INSERT INTO user_wine
+            (user_id, wine_id) 
+            VALUES ($1, $2)
+            RETURNING id;`
+            , [userId, wine_id]);
+            
+            console.log("response is ", response.id);
 
             return response;
 

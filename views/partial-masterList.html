@@ -13,12 +13,12 @@
         <tbody>
         ${wineData.map(wine => `
             <tr>
-                <td>${wine.producer}</td> 
-                <td>${wine.varietals}</td> 
-                <td>${wine.region}</td> 
-                <td>${wine.country}</td> 
-                <td>${wine.year}</td>
-                <form action="/masterList" method="POST"> 
+                <form action="/masterList/${wine.id}" method="POST"> 
+                    <td>${wine.producer}</td> 
+                    <td>${wine.varietals}</td> 
+                    <td>${wine.region}</td> 
+                    <td>${wine.country}</td> 
+                    <td>${wine.year}</td>
                     <td><input type="submit" value="Add Wine" name="add"></input></td>
                 </form>
                 

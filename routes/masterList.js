@@ -1,14 +1,17 @@
 const express = require("express"),
     router = express.Router(),
-    WineModel = require("../models/wineModel");
+    WineModel = require("../models/wineModel"),
+    UserModel = require("../models/userModel");
+
 
 router.get("/", async (req, res, next) => {
-    const wineList = await WineModel.getAllWineData();
+    const wineInfo = await WineModel.getAllWineData();
 
     res.render("template", {
         locals: {
             title: "Wine List",
-            wineData: wineList
+            wineData: wineInfo,
+            
         },
         partials: {
             partial: "partial-masterList"
@@ -16,17 +19,16 @@ router.get("/", async (req, res, next) => {
     });
 });
 
-router.post("/", async (req, res, next) => {
-    const { user_id } = req.params;
 
-    const { producer, region, country, varietals, year, type } = req.body;
+router.post("/:wine_id", async (req, res, next) => {
+    const { wine_id } = req.params;
 
-    const addedWine = new WineList(producer, region, country, varietals, year, type);
-    const response = await addedWine.addUserWine();
+    const userId = req.session.user_id;
 
-    if (response) {
-        res.status(200).redirect("/");
-    }
+    const response = await WineModel.addUserWine(userId, wine_id);
+    console.log("response is", response);
+    return response; 
+
 })
 
 module.exports = router; 
