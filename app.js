@@ -9,7 +9,7 @@ const express = require("express"),
 const indexRouter = require("./routes/index"),
         masterListRouter = require("./routes/masterlist"), 
         buyerRouter = require("./routes/buyerList"); 
-    // usersRouter = require("./routes/users");
+    
 
     require('dotenv').config();
 
