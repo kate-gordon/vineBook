@@ -7,6 +7,7 @@
                 <th>Region</th>
                 <th>Country</th>
                 <th>Vintage</th>
+                <th>Checked?</th>
             </tr>
         </thead>
         <tbody>
@@ -16,7 +17,8 @@
                 <td>${wine.varietals}</td> 
                 <td>${wine.region}</td> 
                 <td>${wine.country}</td> 
-                <td>${wine.year}</td> 
+                <td>${wine.year}</td>
+                <td><input type="radio"> check</input></td>
             </tr>
         `).join('')}
         </tbody>

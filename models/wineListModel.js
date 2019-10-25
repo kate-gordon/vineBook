@@ -1,11 +1,11 @@
 const db = require("./conn");
 
-class WineList {
+class UserList {
     constructor(user_id, wine_id) {
         this.user_id = user_id;
         this.wine_id = wine_id;
     }
-    async userList() { 
+    async myList() { 
         try {
             const response = await db.any ( 
                 `SELECT *
@@ -15,7 +15,7 @@ class WineList {
                 INNER JOIN users 
                 ON users.id = user_wine.user_id; 
                 `)
-            console.log("response", response)
+            console.log("response", response);
             return response;  
         } catch(err) {
             return err.message;
@@ -23,4 +23,6 @@ class WineList {
     }
 }
 
-module.exports = WineList;
+
+
+module.exports = UserList;
