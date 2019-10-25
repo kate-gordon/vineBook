@@ -20,13 +20,22 @@ class WineList {
         }
     }
 
-    async getWineName() {
+    async addUserWine(id) {
+        const addWine = (`INSERT INTO user_wine
+            (user_id, wine_id) 
+            VALUES ($1, $2) 
+            RETURNING id`, [this.user_id, this.wine_id]);
+
         try {
-            const response = await db.any(`SELECT `)
+            const response = await db.any(addWine);
+            console.log("response is ", response);
+
+            return response;
+
         }catch(err) {
             return err.message;
         }
     }
-}
+};
 
 module.exports = WineList; 

@@ -8,7 +8,7 @@ const express = require("express"),
 
 const indexRouter = require("./routes/index"),
         masterListRouter = require("./routes/masterlist"), 
-        buyerRouter = require("./routes/buyer"); 
+        buyerRouter = require("./routes/buyerList"); 
     // usersRouter = require("./routes/users");
 
     require('dotenv').config();
@@ -37,6 +37,6 @@ app.use(
 
 app.use("/", indexRouter);
 app.use("/masterList", masterListRouter);
-app.use("/buyer", buyerRouter);
+app.use("/buyerList", buyerRouter);
 
 module.exports = app;

@@ -7,7 +7,7 @@
                 <th>Region</th>
                 <th>Country</th>
                 <th>Vintage</th>
-                <th>Checked?</th>
+                <th>Add Wine</th>
             </tr>
         </thead>
         <tbody>
@@ -18,7 +18,10 @@
                 <td>${wine.region}</td> 
                 <td>${wine.country}</td> 
                 <td>${wine.year}</td>
-                <td><input type="radio"> check</input></td>
+                <form action="/masterList" method="POST"> 
+                    <td><input type="submit" value="Add Wine" name="add"></input></td>
+                </form>
+                
             </tr>
         `).join('')}
         </tbody>
