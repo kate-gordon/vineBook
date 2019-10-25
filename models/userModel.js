@@ -33,8 +33,8 @@ class User {
             const isValid = this.checkPassword(response.password);
 
             if (!!isValid) {
-                const { id, first_name, last_name } = response;
-                return { isValid, id, first_name, last_name };
+                const { id, first_name, last_name, role } = response;
+                return { isValid, id, first_name, last_name, role };
             } else {
                 return { isValid };
             }
