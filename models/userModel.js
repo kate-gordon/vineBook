@@ -23,11 +23,12 @@ class User {
                     first_name, 
                     last_name, 
                     company,
-                    password
+                    password,
+                    role
                     FROM users WHERE email = $1;`, 
             [this.email]);
 
-            // console.log("login this:", this);
+            console.log("login this:", this);
 
             const isValid = this.checkPassword(response.password);
 
@@ -50,7 +51,8 @@ class User {
                 VALUES ($1, $2, $3, $4, $5, $6) 
                 RETURNING id;`, 
                 [this.first_name, this.last_name, this.company, this.email, this.password, this.role]);
-        return response;
+            console.log(this.role)
+            return response;
         }catch(err) {
             return err.message;
         }
