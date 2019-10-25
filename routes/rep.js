@@ -3,6 +3,21 @@ const express = require('express'),
 
 const userListModel = require("../models/userListModel");
 
+router.get("/", async (req, res, next) => {
+    const userInfo = await userListModel.getUserInfo();
+
+    res.render("template", {
+        locals: {
+            title: "Buyer List",
+            userData: userInfo,
+            is_logged_in: req.session.is_logged_in
+        },
+        partials: {
+            partial: "partial-rep"
+        }
+    });
+});
+
 
 router.get('/:user_id'), async function(req, res, next) {
     const { user_id } = req.params; 
@@ -21,21 +36,5 @@ router.get('/:user_id'), async function(req, res, next) {
     }); 
 }; 
 
-
-
-router.get("/", async (req, res, next) => {
-    const userInfo = await userModel.getUserInfo();
-
-    res.render("template", {
-        locals: {
-            title: "Buyer List",
-            userData: userInfo,
-            is_logged_in: req.session.is_logged_in
-        },
-        partials: {
-            partial: "partial-rep"
-        }
-    });
-});
 
 module.exports = router;
