@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Buyers</th>
+            <th>Company</th>
+        </tr>
+    </thead>
+    <tbody>
+        ${userData.map(user => `
+            <tr>
+                <td>${user.first_name} ${user.last_name}</td>
+                <td>${user.company}</td>
+            </tr>
+            `).join('')}
+    </tbody>
+</table>

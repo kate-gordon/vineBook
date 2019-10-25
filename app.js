@@ -8,7 +8,8 @@ const express = require("express"),
 
 const indexRouter = require("./routes/index"),
         masterListRouter = require("./routes/masterlist"), 
-        buyerRouter = require("./routes/buyerList"); 
+        buyerRouter = require("./routes/buyerList"),
+        repRouter = require("./routes/rep"); 
     
 
     require('dotenv').config();
@@ -26,7 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(
     session({
-        store: new fileStore(),
+        
         secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: true,
@@ -38,5 +39,6 @@ app.use(
 app.use("/", indexRouter);
 app.use("/masterList", masterListRouter);
 app.use("/buyerList", buyerRouter);
+app.use("/rep", repRouter);
 
 module.exports = app;
