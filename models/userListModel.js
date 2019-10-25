@@ -1,7 +1,7 @@
 const db = require("./conn");
 
 class UserList {
-    constructor(id, name) {
+    constructor(id, first_name) {
         this.id = id;
         this.first_name = first_name;
     }

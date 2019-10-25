@@ -8,6 +8,8 @@ const UserModel = require("../models/userModel");
     res.render("template", {
       locals: {
         title: "Login",
+        id: req.session.user_id,
+        is_logged_in: req.session.is_logged_in
       },
       partials: {
         partial: "partial-login"
@@ -28,7 +30,9 @@ const UserModel = require("../models/userModel");
   router.get("/signup", async (req, res, next) => {
     res.render("template", {
       locals: {
-        title: "Sign-Up"
+        title: "Sign-Up",
+        id: req.session.user_id,
+        is_logged_in: req.session.is_logged_in
       },
       partials: {
         partial: "partial-signup"
@@ -78,7 +82,9 @@ const UserModel = require("../models/userModel");
     res.render("template", {
       locals: {
         title: "User Wine List",
-        listData: userListData  
+        listData: userListData,
+        id: req.session.user_id,
+        is_logged_in: req.session.is_logged_in
       },
       partials: {
         partial: "partial-buyer"
