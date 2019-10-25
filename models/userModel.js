@@ -55,6 +55,17 @@ class User {
             return err.message;
         }
     }
+    static async getById(id) {
+        try{
+            const response = await db.one(
+                `SELECT * FROM users WHERE id = ${id};`
+            );
+            console.log("ID is ", response);
+            return response
+        }catch(err){
+            return err.message;
+        }
+    }
 }
 
 module.exports = User;
