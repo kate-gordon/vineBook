@@ -55,6 +55,19 @@ class User {
             return err.message;
         }
     }
+
+    async updateList() {
+        try {
+            if (wine) {
+            const response = await db.one(`INSERT INTO user_wine
+                (user_id, wine_id)
+                VALUES (users.id, wines.id)`);
+        console.log(response);
+        }
+        } catch(err) {
+            return err.message;
+        }
+    }
     
 }
 

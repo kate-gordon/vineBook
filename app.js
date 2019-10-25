@@ -9,8 +9,6 @@ const express = require("express"),
 const indexRouter = require("./routes/index"),
         wineRouter = require("./routes/wine"), 
         buyerRouter = require("./routes/buyer"); 
-    // usersRouter = require("./routes/users");
-        buyerRouter = require("./routes/buyer");
 
     require('dotenv').config();
 
@@ -39,6 +37,5 @@ app.use(
 app.use("/", indexRouter);
 app.use("/wine", wineRouter);
 app.use("/buyer", buyerRouter);
-// app.use("/users", usersRouter);
 
 module.exports = app;

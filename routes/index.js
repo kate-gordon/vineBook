@@ -72,4 +72,17 @@ const UserModel = require("../models/userModel");
     }
   });
 
+  router.get('/', async (req, res, next) => {
+    const userListData = await wineListModel.myList();
+    res.render("template", {
+      locals: {
+        title: "User Wine List",
+        listData: userListData  
+      },
+      partials: {
+        partial: "partial-buyer"
+      }
+    });
+  });
+
 module.exports = router;
