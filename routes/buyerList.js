@@ -4,6 +4,8 @@ const express = require('express'),
   const userListModel = require("../models/userListModel");
   const userModel = require("../models/userModel");
 
+
+  /// Route to My User List
   router.get('/:user_id', async (req, res, next) => {
     const { user_id } = req.params;
     const buyer = await userModel.getById(user_id);
