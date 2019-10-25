@@ -1,6 +1,6 @@
 const db = require("./conn");
 
-class UserList{
+class UserList {
     constructor(user_id, wine_id) {
         this.user_id = user_id;
         this.wine_id = wine_id;
@@ -14,13 +14,15 @@ class UserList{
                 ON wines.id = user_wine.wine_id 
                 INNER JOIN users 
                 ON users.id = user_wine.user_id; 
-                `,[this.user_id, this.wine_id]);
-            console.log("response", response)
+                `)
+            console.log("response", response);
             return response;  
         } catch(err) {
             return err.message;
         }
     }
 }
+
+
 
 module.exports = UserList;

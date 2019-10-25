@@ -70,7 +70,8 @@ const UserModel = require("../models/userModel");
     } else {
       res.sendStatus(401);
     }
-  });
+  }
+  );
 
   router.get('/', async (req, res, next) => {
     const userListData = await wineListModel.myList();
