@@ -19,6 +19,20 @@ class UserList {
             return err.message;
         }
     }
+    static async getById(id) {
+        try{
+            const response = await db.one(
+                `SELECT * FROM user_wine
+                INNER JOIN wines
+                ON user_wine.wine_id = wines.id
+                WHERE user_id = ${id};
+                `) 
+                console.log("response", response);
+                return response; 
+        } catch(err) {
+            return err.message; 
+        }
+    }
 }
 
 
