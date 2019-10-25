@@ -43,7 +43,6 @@ const UserModel = require("../models/userModel");
   
   router.post("/signup", async (req, res, next) => {
     const { first_name, last_name, email, company, role } = req.body;
-  
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(req.body.password, salt);
   
