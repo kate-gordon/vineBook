@@ -2,6 +2,10 @@ html {
   background: rgb(14,0,4);
   background: linear-gradient(90deg, rgba(14,0,4,1) 0%, rgba(74,54,59,1) 35%);
   background-size: cover;
+<<<<<<< HEAD
+=======
+  /* background-repeat: no-repeat; */
+>>>>>>> 6360e8f815307c8db7c7fd681799247f32c653ac
 }
 
 body {
@@ -20,6 +24,13 @@ h2 {
   font-size: 40px; 
   display:flex; 
   align-items: center; 
+}
+
+header {
+  display:flex; 
+  justify-content: center; 
+  font-size: 60px; 
+  padding-bottom: 20px; 
 }
 
 .table {
