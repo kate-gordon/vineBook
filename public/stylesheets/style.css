@@ -1,9 +1,15 @@
+html {
+  background: rgb(14,0,4);
+  background: linear-gradient(90deg, rgba(14,0,4,1) 0%, rgba(74,54,59,1) 35%);
+  background-size: cover;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: rgb(14,0,4);
-  background: linear-gradient(90deg, rgba(14,0,4,1) 0%, rgba(74,54,59,1) 35%);
+
   color: #85838D; 
+  padding: 10px; 
 }
 
 a {
@@ -11,5 +17,15 @@ a {
 }
 
 .table {
-  opacity: 0.1; 
+  background-color: transparent;
+  color: #85838D; 
 }
+
+.table thead th { 
+  color: #85838D; 
+}
+
+.navbar {
+  background: #010101; 
+}
+
