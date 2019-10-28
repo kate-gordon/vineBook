@@ -1,7 +1,7 @@
 const db = require('./conn.js');
 
 class WineList {
-    constructor(id, producer, region, country, varietals, year, type){
+    constructor(id, producer, region, country, varietals, year, list_type){
         this.id = id;
         this.producer = producer;
         this.region = region;
@@ -9,6 +9,7 @@ class WineList {
         this.varietals = varietals; 
         this.year = year; 
         this.type = type; 
+        this.list_type = list_type;
     }
 
     static async getAllWineData() {
@@ -41,6 +42,9 @@ class WineList {
             RETURNING id;`
             , [userId, wine_id, list_type]);
             
+
+            console.log("response is ", response);
+
 
             return response;
 

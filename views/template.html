@@ -10,16 +10,82 @@
         <link rel="stylesheet" href="../stylesheets/style.css">
     </head>
     <body>
-        <nav class="main-menu" style="text-align: center;">
-                ${!!is_logged_in ? `
-            <a href="/logout">Log Out</a>
-            <a href="/masterList">Wine List</a>
-            <a href="/buyerList/${id}">My List</a>
-            ` : `
-            <a href="/">Login</a>
-            <a href="/signup">Sign Up</a>
-            `}
-        </nav>
+        
+<html class="has-navbar-fixed-top">
+<nav class="navbar is-transparent is-fixed-top">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="../images/DugkJmgi5C5SZfr4E9Wt0F6EQ.png" alt="Wine Bottle" width="38" height="28">
+    </a>
+    <div class="navbar-burger burger has-dropdown is-hoverable" data-target="navbarExampleTransparentExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div id="" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="/">
+        Home
+      </a>
+      <div id="" class="navbar-menu">
+        <div class="navbar-start">
+          ${!!is_logged_in ? `
+          <a class="navbar-item" href="/masterlist">
+            Master List
+          </a>
+          ` : `
+          <a class="navbar-item" href="/">
+            Master List
+          </a>
+          `}
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            ${!!is_logged_in ? `
+            <a class="bd-tw-button button" href="/buyerlist/user_id">
+              <span class="icon">
+                <i class="fab fa-twitter"></i>
+              </span>
+    
+                <span style="text-transform: capitalize;">${first_name}'s Wine List</span>
+                ` : `
+                <a class="bd-tw-button button" href="/signup">
+                  <span class="icon">
+                    <i class="fab fa-twitter"></i>
+                  </span>
+              <span>
+                Sign Up
+              </span>
+              `}
+            </a>
+          </p>
+          <p class="control">
+              ${!!is_logged_in ? `
+                <a class="button is-dark" href="/logout">
+                  <span class="icon">
+                  </span>
+              <span>Logout</span>
+              ` : `
+              <a class="button is-dark" href="/">
+                <span class="icon">
+                </span>
+              <span>Login</span>
+              `}
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
         <h1 class="container">${title}</h1>
         <main class="container">${partial}</main>
     </body>
