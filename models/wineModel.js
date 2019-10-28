@@ -32,14 +32,14 @@ class WineList {
         }
     }
 
-    static async addUserWine(userId, wine_id) {
+    static async addUserWine(userId, wine_id, list_type) {
 
         try {
             const response = await db.one(`INSERT INTO user_wine
-            (user_id, wine_id) 
-            VALUES ($1, $2)
+            (user_id, wine_id, list_type) 
+            VALUES ($1, $2, $3)
             RETURNING id;`
-            , [userId, wine_id]);
+            , [userId, wine_id, list_type]);
             
 
             return response;
