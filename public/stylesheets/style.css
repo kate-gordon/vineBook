@@ -29,3 +29,8 @@ a {
   background: #010101; 
 }
 
+.signup {
+  display:flex; 
+  flex-direction:column; 
+  padding: 20px; 
+}
