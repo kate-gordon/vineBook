@@ -22,11 +22,12 @@
         Password
     <input type="password" aria-placeholder="Password" name="password">
     </label>
-      <input type = "text" list = "role" name="role" placeholder="Rep or Buyer?"> 
-      <datalist id = "role">
-        <option value = "rep">
-        <option value = "buyer">
-      </datalist>
+    <label>
+    <select name="list_type">
+            <option value="rep">Rep</option>
+            <option value="buyer">Buyer</option>
+        </select>
+    </label>
 
     <button type="submit">Submit</button>
 </form>
