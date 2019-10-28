@@ -42,10 +42,6 @@ class WineList {
             RETURNING id;`
             , [userId, wine_id, list_type]);
             
-
-            console.log("response is ", response);
-
-
             return response;
 
         }catch(err) {
