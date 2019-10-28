@@ -32,6 +32,20 @@ class UserList {
             return err.message;
         }
     }
+
+    static async getAccountInfo(id) {
+        try {
+            const response = await db.one(
+                `SELECT * FROM users
+                WHERE id = ${id};
+                `);
+       
+            return response;
+
+        } catch(err) {
+            return err.message;
+        }
+    }
 }
 
 

@@ -31,7 +31,7 @@
       </a>
       <div id="" class="navbar-menu">
         <div class="navbar-start">
-          ${!!is_logged_in ? `
+          ${!!is_logged_in && role == 'buyer' ? `
           <a class="navbar-item" href="/masterlist">
             Master List
           </a>

@@ -1,3 +1,6 @@
+<p> Account Name: ${userData.company}</p>
+<p> Account Buyer: ${userData.first_name} ${userData.last_name}</p>
+    
 <h2>INVENTORY</h2>
 <table class="table">
     <thead>
@@ -22,25 +25,21 @@
     </tbody>
 </table>
 
-<h2>Looking For</h2>
+<h2>Looking For ...</h2>
 <table class="table">
     <thead>
         <tr>
-            <th>Producer</th>
             <th>Varietals</th>
             <th>Region</th>
             <th>Country</th>
-            <th>Vintage</th>
         </tr>
     </thead>
     <tbody>
     ${needData.map(buyer => `
         <tr>
-            <td>${buyer.producer}</td> 
             <td>${buyer.varietals}</td> 
             <td>${buyer.region}</td> 
             <td>${buyer.country}</td> 
-            <td>${buyer.year}</td>
         </tr>
     `).join('')}
     </tbody>
