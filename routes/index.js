@@ -72,11 +72,11 @@ const UserModel = require("../models/userModel");
       req.session.user_id = id;
   
     if(role == "buyer") {
-      res.status(200).redirect("/buyerList/user_id")
+      res.status(200).redirect("/")
     }
 
     if(role == "rep") {
-      res.status(200).redirect("/rep")
+      res.status(200).redirect("/")
     }
 
     else{

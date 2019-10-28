@@ -37,14 +37,14 @@ p {
 
 .table {
   background-color: transparent;
-  font-size: 18px; 
+  font-size: 20px; 
   color: rgb(139, 138, 143);
   
 }
 
 .table thead th { 
   color:rgb(179, 176, 190);
-  font-size: 30px; 
+  font-size: 24px; 
 }
 
 tr:hover {
@@ -52,7 +52,7 @@ tr:hover {
 }
 
 .navbar {
-  background: #010101; 
+  background: #010101;
 }
 
 .signup {
