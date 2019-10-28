@@ -7,19 +7,73 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-        <link rel="stylesheet" href="/public/stylesheets/style.css">
+        <link rel="stylesheet" href="./stylesheets/style.css">
     </head>
     <body>
-        <nav class="main-menu" style="text-align: center;">
-                ${!!is_logged_in ? `
-            <a href="/logout">Log Out</a>
-            <a href="/masterList">Wine List</a>
-            <a href="/buyerList/${id}">My List</a>
-            ` : `
-            <a href="/">Login</a>
-            <a href="/signup">Sign Up</a>
-            `}
-        </nav>
+        
+<html class="has-navbar-fixed-top">
+<nav class="navbar is-transparent is-fixed-top">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="./images/DugkJmgi5C5SZfr4E9Wt0F6EQ.png" alt="Wine Bottle" width="38" height="28">
+    </a>
+    <div class="navbar-burger burger has-dropdown is-hoverable" data-target="navbarExampleTransparentExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div id="" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="/">
+        Home
+      </a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" href="/">
+          Contact
+        </a>
+        <div class="navbar-dropdown is-boxed">
+          <a class="navbar-item" href="https://github.com/joeyf116" target="_blank">
+            Joseph Fitzpatrick
+          </a>
+          <a class="navbar-item" href="https://github.com/FelipeD97/" target="_blank">
+            Felipe Dunbar
+          </a>
+          <a class="navbar-item" href="https://github.com/kate-gordon" target="_blank">
+            Kate Gordon
+          </a>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="bd-tw-button button" href="/signup">
+              <span class="icon">
+                <i class="fab fa-twitter"></i>
+              </span>
+              <span>
+                Sign Up
+              </span>
+            </a>
+          </p>
+          <p class="control">
+            <a class="button is-dark" href="/">
+              <span class="icon">
+              </span>
+              <span>Login</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
         <h1 class="container">${title}</h1>
         <main class="container">${partial}</main>
     </body>
