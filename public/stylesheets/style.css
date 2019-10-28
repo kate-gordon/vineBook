@@ -5,11 +5,10 @@ html {
 }
 
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-
-  color: #85838D; 
   padding: 10px; 
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #85838D; 
+  
 }
 
 a {
@@ -32,5 +31,7 @@ a {
 .signup {
   display:flex; 
   flex-direction:column; 
+  justify-content: center;
+  align-items: center; 
   padding: 20px; 
 }
