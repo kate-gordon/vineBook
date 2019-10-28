@@ -2,7 +2,7 @@ html {
   background: rgb(14,0,4);
   background: linear-gradient(90deg, rgba(14,0,4,1) 0%, rgba(74,54,59,1) 35%);
   background-size: cover;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
 }
 
 body {
@@ -23,9 +23,16 @@ h2 {
   align-items: center; 
 }
 
+header {
+  display:flex; 
+  justify-content: center; 
+  font-size: 60px; 
+  padding-bottom: 20px; 
+}
+
 .table {
   background-color: transparent;
-  font-size: 24px; 
+  font-size: 18px; 
   color: rgb(139, 138, 143);
 }
 
