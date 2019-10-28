@@ -13,7 +13,6 @@ class UserList {
                 ON user_wine.wine_id = wines.id
                 WHERE user_id = ${id};
                 `)
-            console.log("response", response);
             return response;  
         } catch(err) {
             return err.message;
@@ -23,9 +22,9 @@ class UserList {
     static async getUserInfo() {
         try {
             const response = await db.any(
-                `SELECT * FROM users;`);
-            
-            console.log("response is ", response);
+                `SELECT * FROM users
+                WHERE role = 'buyer';`);
+
             return response;
 
         } catch(err) {

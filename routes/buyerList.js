@@ -6,13 +6,14 @@ const express = require('express'),
 
 
   /// Route to My User List
+
   router.get('/:user_id', async (req, res, next) => {
     const { user_id } = req.params;
     const buyer = await userModel.getById(user_id);
-    console.log('buyer is: ', buyer)
+    
 
     const userListData = await userListModel.myList(user_id);
-    console.log("User Data: ", userListData);
+    
     res.status(200).render("template", {
       locals: {
         title: "My Wine List",
@@ -26,6 +27,8 @@ const express = require('express'),
       }
     });
   });
+
+  
 
   module.exports = router;
 

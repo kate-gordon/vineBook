@@ -28,7 +28,7 @@ router.get('/:user_id', async (req, res, next) => {
     const userListData = await userListModel.myList(user_id);
     res.status(200).render("template", {
       locals: {
-        title: "My Wine List",
+        title: "",
         Data: buyer, userListData,
         is_logged_in: req.session.is_logged_in,
         id: req.session.user_id

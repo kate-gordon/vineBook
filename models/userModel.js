@@ -28,7 +28,7 @@ class User {
                     FROM users WHERE email = $1;`, 
             [this.email]);
 
-            console.log("login this:", this);
+            
 
             const isValid = this.checkPassword(response.password);
 
@@ -51,7 +51,7 @@ class User {
                 VALUES ($1, $2, $3, $4, $5, $6) 
                 RETURNING id;`, 
                 [this.first_name, this.last_name, this.company, this.email, this.password, this.role]);
-            console.log(this.role)
+            
             return response;
         }catch(err) {
             return err.message;
@@ -62,7 +62,7 @@ class User {
             const response = await db.one(
                 `SELECT * FROM users WHERE id = ${id};`
             );
-            console.log("ID is ", response);
+            
             return response
         }catch(err){
             return err.message;

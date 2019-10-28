@@ -54,6 +54,8 @@ const UserModel = require("../models/userModel");
     }
   });
   
+  // User Logs In 
+
   router.post("/", async (req, res, next) => {
     const { email, password, role } = req.body;
   
