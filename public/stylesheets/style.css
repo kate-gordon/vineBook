@@ -17,19 +17,25 @@ a {
 
 .table {
   background-color: transparent;
+  font-size: 18px;
   color: #85838D; 
 }
 
 .table thead th { 
-  color: #85838D; 
+  color: #85838D;
+  font-size: 24px; 
 }
 
 .navbar {
-  background: #010101; 
+  background: #010101;
 }
 
 .signup {
-  display:flex; 
-  flex-direction:column; 
+  display: flex; 
+  flex-direction: column; 
   padding: 20px; 
+}
+
+.login-title {
+  font-size: 24px;
 }
