@@ -6,9 +6,9 @@ html {
 
 body {
   padding: 10px; 
-  font: 14px;
+  font: 18px;
   font-family: 'Playfair Display', serif;
-  color: #85838D; 
+  color: rgb(179, 176, 190); 
   
 }
 
@@ -18,11 +18,13 @@ a {
 
 .table {
   background-color: transparent;
-  color: #85838D; 
+  font-size: 18px; 
+  color: rgb(179, 176, 190);
 }
 
 .table thead th { 
-  color: #85838D; 
+  color:rgb(179, 176, 190);
+  font-size: 24px; 
 }
 
 .navbar {
