@@ -2,6 +2,7 @@ html {
   background: rgb(14,0,4);
   background: linear-gradient(90deg, rgba(14,0,4,1) 0%, rgba(74,54,59,1) 35%);
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 body {
