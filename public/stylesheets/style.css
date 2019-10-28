@@ -6,7 +6,8 @@ html {
 
 body {
   padding: 10px; 
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px;
+  font-family: 'Playfair Display', serif;
   color: #85838D; 
   
 }
