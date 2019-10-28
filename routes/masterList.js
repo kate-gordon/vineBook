@@ -23,9 +23,11 @@ router.post("/:wine_id", async (req, res, next) => {
     const { wine_id } = req.params;
 
     const userId = req.session.user_id;
+    const { list_type } = req.body;
 
-    const response = await wineModel.addUserWine(userId, wine_id);
-    
+    const response = await wineModel.addUserWine(userId, wine_id, list_type);
+    console.log("response is ", response);
+    console.log(list_type);
     return response; 
 
 })
