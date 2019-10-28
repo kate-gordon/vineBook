@@ -13,7 +13,6 @@ class UserList {
                 ON user_wine.wine_id = wines.id
                 WHERE user_id = ${id};
                 `)
-            // console.log("response", response);
             return response;  
         } catch(err) {
             return err.message;
@@ -25,8 +24,7 @@ class UserList {
             const response = await db.any(
                 `SELECT * FROM users
                 WHERE role = 'buyer';`);
-            
-            console.log("response is ", response);
+
             return response;
 
         } catch(err) {

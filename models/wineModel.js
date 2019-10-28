@@ -25,7 +25,7 @@ class WineList {
             const response = await db.one(
                 `SELECT * FROM wines WHERE id = ${id};`
             );
-            console.log("ID is ", response);
+            
             return response
         }catch(err){
             return err.message;
@@ -41,7 +41,6 @@ class WineList {
             RETURNING id;`
             , [userId, wine_id]);
             
-            console.log("response is ", response.id);
 
             return response;
 
