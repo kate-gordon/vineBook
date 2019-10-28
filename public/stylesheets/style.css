@@ -5,25 +5,36 @@ html {
 }
 
 body {
-  font: 14px;
-  font-family: 'Playfair Display', serif;
-  color: #85838D; 
   padding: 10px; 
+  font: 18px;
+  font-family: 'Playfair Display', serif;
+  color: rgb(179, 176, 190); 
+  
 }
 
 a {
   color: #00B7FF;
 }
 
+h2 {
+  font-size: 40px; 
+  display:flex; 
+  align-items: center; 
+}
+
 .table {
   background-color: transparent;
-  font-size: 18px;
-  color: #85838D; 
+  font-size: 20px; 
+  color: rgb(139, 138, 143);
 }
 
 .table thead th { 
-  color: #85838D;
+  color:rgb(179, 176, 190);
   font-size: 24px; 
+}
+
+tr:hover {
+  background-color:rgb(14,0,4); 
 }
 
 .navbar {
@@ -31,11 +42,18 @@ a {
 }
 
 .signup {
-  display: flex; 
-  flex-direction: column; 
+  display:flex; 
+  flex-direction:column; 
+  justify-content: center;
+  align-items: center; 
   padding: 20px; 
 }
 
-.login-title {
-  font-size: 24px;
+.signupBTN { 
+  padding: 5px; 
+  border-radius: 10%;
+}
+.welcome {
+  font-size: 40px;
+  text-align: center;
 }

@@ -4,11 +4,14 @@ html {
 
 }
 </style>
+ ${!!is_logged_in ? `
+    
+    
+    <h1 class = "welcome">Welcome, ${first_name}</h1> 
 
-<h1 class="login-title">LOGIN</h1>
-<p>&nbsp;</p>
-<form class="login-form" action="/" method="POST">
-    <label class="input-login">Email Address
+    ` : `   
+<form action="/" method="POST">
+    <label>Email Address
         <input type="text" aria-placeholder="Email Address" name="email">
     </label>
     <label class="input-login">Password
@@ -16,3 +19,4 @@ html {
     </label>
     <button type="submit">Login</button>
 </form>
+`}

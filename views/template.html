@@ -48,13 +48,20 @@
       <div class="navbar-item">
         <div class="field is-grouped">
           <p class="control">
-            ${!!is_logged_in ? `
+            ${!!is_logged_in && role == 'buyer' ? `
             <a class="bd-tw-button button" href="/buyerlist/user_id">
               <span class="icon">
                 <i class="fab fa-twitter"></i>
               </span>
     
                 <span style="text-transform: capitalize;">${first_name}'s Wine List</span>
+                ` : !!is_logged_in && role == 'rep' ? `
+                <a class="bd-tw-button button" href="/rep">
+                  <span class="icon">
+                    <i class="fab fa-twitter"></i>
+                  </span>
+        
+                    <span style="text-transform: capitalize;">${first_name}'s Clients</span>
                 ` : `
                 <a class="bd-tw-button button" href="/signup">
                   <span class="icon">

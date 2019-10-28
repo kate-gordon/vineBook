@@ -1,4 +1,7 @@
-<form action='/signup' method='POST' class="signup">
+<h2> SIGN UP FORM </h2>
+
+<div class="signup">
+<form action='/signup' method='POST'>
     <label> First Name 
         <input type="text" aria-placeholder="First Name" name="first_name">
     </label>
@@ -23,11 +26,12 @@
     <input type="password" aria-placeholder="Password" name="password">
     </label>
     <label>
-    <select name="list_type">
+    <select name="role">
             <option value="rep">Rep</option>
             <option value="buyer">Buyer</option>
         </select>
     </label>
 
-    <button type="submit">Submit</button>
+    <button class="signupBTN" type="submit">Submit</button>
 </form>
+</div>
