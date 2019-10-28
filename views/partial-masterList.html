@@ -20,13 +20,13 @@
                     <td>${wine.region}</td> 
                     <td>${wine.country}</td> 
                     <td>${wine.year}</td>
-
-                    <td><input type = "text" list = "list_type" name="list_type" placeholder="Have or Need?"> 
-                    <datalist id = "list_type">
-                        <option value = "Have">
-                        <option value = "Need">
-                    </datalist>
+                    <td>
+                        <select name="list_type">
+                            <option value="Have">Have</option>
+                            <option value="Need">Need</option>
+                        </select>
                     </td>
+                            
                     <td><input type="submit" value="Add" name="add"></input></td>
 
                 </form>
