@@ -6,6 +6,7 @@ const express = require('express'),
 
 
   /// Route to My User List
+
   router.get('/:user_id', async (req, res, next) => {
     const { user_id } = req.params;
     const buyer = await userModel.getById(user_id);
@@ -25,6 +26,8 @@ const express = require('express'),
       }
     });
   });
+
+  
 
   module.exports = router;
 
