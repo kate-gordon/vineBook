@@ -2,7 +2,6 @@ html {
   background: rgb(14,0,4);
   background: linear-gradient(90deg, rgba(14,0,4,1) 0%, rgba(74,54,59,1) 35%);
   background-size: cover;
-  /* background-repeat: no-repeat; */
 }
 
 body {
@@ -30,15 +29,22 @@ header {
   padding-bottom: 20px; 
 }
 
+p {
+  font-size: 22px; 
+}
+
+
+
 .table {
   background-color: transparent;
   font-size: 18px; 
   color: rgb(139, 138, 143);
+  
 }
 
 .table thead th { 
   color:rgb(179, 176, 190);
-  font-size: 40px; 
+  font-size: 30px; 
 }
 
 tr:hover {

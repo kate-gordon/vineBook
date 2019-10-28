@@ -29,21 +29,21 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Producer</th>
+                
                 <th>Varietals</th>
                 <th>Region</th>
                 <th>Country</th>
-                <th>Vintage</th>
+               
             </tr>
         </thead>
         <tbody>
         ${needData.map(buyer => `
             <tr>
-                <td>${buyer.producer}</td> 
+                <!-- <td>${buyer.producer}</td>  -->
                 <td>${buyer.varietals}</td> 
                 <td>${buyer.region}</td> 
                 <td>${buyer.country}</td> 
-                <td>${buyer.year}</td>
+                <!-- <td>${buyer.year}</td> -->
             </tr>
         `).join('')}
         </tbody>
