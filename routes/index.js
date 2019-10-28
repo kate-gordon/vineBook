@@ -10,7 +10,8 @@ const UserModel = require("../models/userModel");
         title: "Login",
         id: req.session.user_id,
         is_logged_in: req.session.is_logged_in,
-        first_name: req.session.first_name
+        first_name: req.session.first_name,
+        role: req.session.role
       },
       partials: {
         partial: "partial-login"
@@ -91,7 +92,8 @@ const UserModel = require("../models/userModel");
         title: "User Wine List",
         listData: userListData,
         id: req.session.user_id,
-        is_logged_in: req.session.is_logged_in
+        is_logged_in: req.session.is_logged_in,
+        role: req.session.role
       },
       partials: {
         partial: "partial-buyer"

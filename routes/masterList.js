@@ -11,7 +11,8 @@ router.get("/", async (req, res, next) => {
             wineData: wineList,
             id: req.session.user_id,
             is_logged_in: req.session.is_logged_in,
-            first_name: req.session.first_name
+            first_name: req.session.first_name,
+            role: req.session.role
         },
         partials: {
             partial: "partial-masterList"
