@@ -13,11 +13,13 @@ class UserList {
                 ON user_wine.wine_id = wines.id
                 WHERE user_id = ${id};
                 `)
+                console.log("response is ", response);
             return response;  
         } catch(err) {
             return err.message;
         }
     }
+
        
     static async getUserInfo() {
         try {
