@@ -11,6 +11,7 @@ const express = require('express'),
     const { user_id } = req.params;
     const buyer = await userModel.getById(user_id);
     
+    // const userNeedData = await userListModel.myNeedList(user_id);
 
     const userListData = await userListModel.myList(user_id);
     
