@@ -1,4 +1,5 @@
 
+<h2>INVENTORY</h2>
 <table class="table">
         <thead>
             <tr>
@@ -10,7 +11,7 @@
             </tr>
         </thead>
         <tbody>
-        ${userListData.map(buyer => `
+        ${haveData.map(buyer => `
             <tr>
                 <td>${buyer.producer}</td> 
                 <td>${buyer.varietals}</td> 
@@ -22,7 +23,7 @@
         </tbody>
     </table>
 
-<h2>Needed Wines</h2>
+<h2>LOOKING FOR</h2>
     <table class="table">
         <thead>
             <tr>
@@ -34,7 +35,7 @@
             </tr>
         </thead>
         <tbody>
-        ${userListData.map(buyer => `
+        ${needData.map(buyer => `
             <tr>
                 <td>${buyer.producer}</td> 
                 <td>${buyer.varietals}</td> 

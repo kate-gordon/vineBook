@@ -20,20 +20,6 @@ class UserList {
         }
     }
 
-    static async myNeedList(id) { 
-        try {
-            const response = await db.any( 
-                `SELECT * FROM user_wine
-                INNER JOIN wines
-                ON user_wine.wine_id = wines.id
-                WHERE user_id = ${id}
-                AND list_type = "Need";
-                `)
-            return response;  
-        } catch(err) {
-            return err.message;
-        }
-    }
        
     static async getUserInfo() {
         try {
