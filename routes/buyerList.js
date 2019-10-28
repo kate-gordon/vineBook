@@ -21,7 +21,8 @@ const express = require('express'),
         haveData: invData, 
         needData: needData, 
         is_logged_in: req.session.is_logged_in,
-        id: req.session.user_id
+        id: req.session.user_id,
+        first_name: req.session.first_name
       },
       partials: {
         partial: "partial-buyerList"
