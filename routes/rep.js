@@ -14,6 +14,7 @@ router.get("/", async (req, res, next) => {
             is_logged_in: req.session.is_logged_in,
             id: req.session.user_id,
             first_name: req.session.first_name,
+            role: req.session.role
         },
         partials: {
             partial: "partial-rep"
@@ -38,6 +39,7 @@ router.get('/:user_id', async (req, res, next) => {
         is_logged_in: req.session.is_logged_in,
         id: req.session.user_id,
         first_name: req.session.first_name,
+        role: req.session.role
       },
       partials: {
         partial: "partial-single-userList"
