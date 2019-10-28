@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-        <link rel="stylesheet" href="./stylesheets/style.css">
+        <link rel="stylesheet" href="../stylesheets/style.css">
     </head>
     <body>
         
@@ -15,7 +15,7 @@
 <nav class="navbar is-transparent is-fixed-top">
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
-      <img src="./images/DugkJmgi5C5SZfr4E9Wt0F6EQ.png" alt="Wine Bottle" width="38" height="28">
+      <img src="../images/DugkJmgi5C5SZfr4E9Wt0F6EQ.png" alt="Wine Bottle" width="38" height="28">
     </a>
     <div class="navbar-burger burger has-dropdown is-hoverable" data-target="navbarExampleTransparentExample">
       <span></span>
@@ -29,21 +29,17 @@
       <a class="navbar-item" href="/">
         Home
       </a>
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link" href="/">
-          Contact
-        </a>
-        <div class="navbar-dropdown is-boxed">
-          <a class="navbar-item" href="https://github.com/joeyf116" target="_blank">
-            Joseph Fitzpatrick
+      <div id="" class="navbar-menu">
+        <div class="navbar-start">
+          ${!!is_logged_in ? `
+          <a class="navbar-item" href="/masterlist">
+            Master List
           </a>
-          <a class="navbar-item" href="https://github.com/FelipeD97/" target="_blank">
-            Felipe Dunbar
+          ` : `
+          <a class="navbar-item" href="/">
+            Master List
           </a>
-          <a class="navbar-item" href="https://github.com/kate-gordon" target="_blank">
-            Kate Gordon
-          </a>
-          
+          `}
         </div>
       </div>
     </div>
@@ -52,20 +48,36 @@
       <div class="navbar-item">
         <div class="field is-grouped">
           <p class="control">
-            <a class="bd-tw-button button" href="/signup">
+            ${!!is_logged_in ? `
+            <a class="bd-tw-button button" href="/buyerlist/user_id">
               <span class="icon">
                 <i class="fab fa-twitter"></i>
               </span>
+    
+                <span style="text-transform: capitalize;">${first_name}'s Wine List</span>
+                ` : `
+                <a class="bd-tw-button button" href="/signup">
+                  <span class="icon">
+                    <i class="fab fa-twitter"></i>
+                  </span>
               <span>
                 Sign Up
               </span>
+              `}
             </a>
           </p>
           <p class="control">
-            <a class="button is-dark" href="/">
-              <span class="icon">
-              </span>
+              ${!!is_logged_in ? `
+                <a class="button is-dark" href="/logout">
+                  <span class="icon">
+                  </span>
+              <span>Logout</span>
+              ` : `
+              <a class="button is-dark" href="/">
+                <span class="icon">
+                </span>
               <span>Login</span>
+              `}
             </a>
           </p>
         </div>

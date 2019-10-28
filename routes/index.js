@@ -9,7 +9,8 @@ const UserModel = require("../models/userModel");
       locals: {
         title: "Login",
         id: req.session.user_id,
-        is_logged_in: req.session.is_logged_in
+        is_logged_in: req.session.is_logged_in,
+        first_name: req.session.first_name
       },
       partials: {
         partial: "partial-login"
@@ -22,17 +23,13 @@ const UserModel = require("../models/userModel");
     res.status(200).redirect('/');
   })
   
-  router.get("/logout", (req, res, next) => {
-    req.session.destroy();
-    req.sendStatus(200).redirect("/");
-  });
-  
   router.get("/signup", async (req, res, next) => {
     res.render("template", {
       locals: {
         title: "Sign-Up",
         id: req.session.user_id,
-        is_logged_in: req.session.is_logged_in
+        is_logged_in: req.session.is_logged_in,
+        first_name: req.session.first_name
       },
       partials: {
         partial: "partial-signup"

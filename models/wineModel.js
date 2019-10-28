@@ -1,7 +1,7 @@
 const db = require('./conn.js');
 
 class WineList {
-    constructor(id, producer, region, country, varietals, year, type){
+    constructor(id, producer, region, country, varietals, year, list_type){
         this.id = id;
         this.producer = producer;
         this.region = region;
@@ -9,6 +9,7 @@ class WineList {
         this.varietals = varietals; 
         this.year = year; 
         this.type = type; 
+        this.list_type = list_type;
     }
 
     static async getAllWineData() {
@@ -32,16 +33,16 @@ class WineList {
         }
     }
 
-    static async addUserWine(userId, wine_id) {
+    static async addUserWine(userId, wine_id, list_type) {
 
         try {
             const response = await db.one(`INSERT INTO user_wine
-            (user_id, wine_id) 
-            VALUES ($1, $2)
+            (user_id, wine_id, list_type) 
+            VALUES ($1, $2, $3)
             RETURNING id;`
-            , [userId, wine_id]);
+            , [userId, wine_id, list_type]);
             
-            console.log("response is ", response.id);
+            console.log("response is ", response);
 
             return response;
 
