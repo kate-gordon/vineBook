@@ -7,6 +7,7 @@ const express = require('express'),
 
   router.get('/:user_id', async (req, res, next) => {
     const { user_id } = req.params;
+    const { role } = req.body;
 
     const userListData = await userListModel.myList(user_id);
 
@@ -22,7 +23,8 @@ const express = require('express'),
         needData: needData, 
         is_logged_in: req.session.is_logged_in,
         id: req.session.user_id,
-        first_name: req.session.first_name
+        first_name: req.session.first_name,
+        role: req.session.role
       },
       partials: {
         partial: "partial-buyerList"

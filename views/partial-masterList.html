@@ -7,8 +7,10 @@
                 <th>Region</th>
                 <th>Country</th>
                 <th>Vintage</th>
+                ${!!is_logged_in && role == 'rep' ? ` ` : `
                 <th>Select</th>
                 <th>Add</th>
+                `}
             </tr>
         </thead>
         <tbody>
@@ -20,16 +22,19 @@
                     <td>${wine.region}</td> 
                     <td>${wine.country}</td> 
                     <td>${wine.year}</td>
+                    ${is_logged_in && role == 'rep' ? ` ` : `
                     <td>
                         <select name="list_type">
                             <option value="Have">Have</option>
                             <option value="Need">Need</option>
                         </select>
                     </td>
+                    
                             
                     <td><input type="submit" value="Add" name="add"></input></td>
 
                 </form>
+                `}
             </tr>
         `).join('')}
         </tbody>

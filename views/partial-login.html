@@ -4,7 +4,22 @@ html {
 
 }
 </style>
-     
+ ${!!is_logged_in ? `
+    
+    
+    <h1 class = "welcome">Welcome ${first_name}</h1> 
+
+
+
+
+
+
+
+
+
+
+
+    ` : `   
 <form action="/" method="POST">
     <label>Email Address
         <input type="text" aria-placeholder="Email Address" name="email">
@@ -14,3 +29,4 @@ html {
     </label>
     <button type="submit">Login</button>
 </form>
+`}
