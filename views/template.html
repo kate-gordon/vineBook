@@ -17,13 +17,15 @@
     <a class="navbar-item" href="/">
       <img src="../images/DugkJmgi5C5SZfr4E9Wt0F6EQ.png" alt="Wine Bottle" width="38" height="28">
     </a>
-    <div class="navbar-burger burger has-dropdown is-hoverable" data-target="navbarExampleTransparentExample">
+    
+  </div>
+  <div class="navbar-burger burger has-dropdown is-hoverable" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');" data-target="navbarExampleTransparentExample">
+    <div class="burger-menu">
       <span></span>
       <span></span>
       <span></span>
     </div>
   </div>
-
   <div id="" class="navbar-menu">
     <div class="navbar-start">
       <a class="navbar-item" href="/">
@@ -46,7 +48,7 @@
         <div class="field is-grouped">
           <p class="control">
             ${!!is_logged_in && role == 'buyer' ? `
-            <a class="bd-tw-button button" href="/buyerlist/user_id">
+            <a class="bd-tw-button button" href="/buyerlist/${id}">
               <span class="icon">
                 <i class="fab fa-twitter"></i>
               </span>

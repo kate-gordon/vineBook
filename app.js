@@ -27,11 +27,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(
     session({
-        
+        store: fileStore(session),
         secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: true,
-        // is_logged_in: false,
+        is_logged_in: false,
     })
 );
 
