@@ -85,6 +85,9 @@ const UserModel = require("../models/userModel");
   }
   });
 
+
+// Gets buyer's list of wine 
+
   router.get('/', async (req, res, next) => {
     const userListData = await wineListModel.myList();
     res.render("template", {

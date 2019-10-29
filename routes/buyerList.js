@@ -15,7 +15,6 @@ const express = require('express'),
     const needData = userListData.filter(list => list.list_type === "Need");
 
 
-    
     res.status(200).render("template", {
       locals: {
         title: "My Wine List",
