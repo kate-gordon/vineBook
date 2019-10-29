@@ -99,7 +99,9 @@ tr:hover {
 
 .message-body {
   background:rgb(179, 176, 190); 
+  padding: 40px; 
 }
+
 @media screen and (max-width: 800px) {
   tr { 
     display: flex; 

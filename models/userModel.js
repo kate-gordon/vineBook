@@ -28,7 +28,6 @@ class User {
                     FROM users WHERE email = $1;`, 
             [this.email]);
 
-            
 
             const isValid = this.checkPassword(response.password);
 
