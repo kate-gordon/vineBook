@@ -26,10 +26,11 @@ h2 {
 }
 
 header {
-  display:flex; 
+  display: flex; 
   justify-content: center; 
   font-size: 60px; 
   padding-bottom: 20px; 
+  padding-top: 40px;
 }
 
 p {
@@ -52,7 +53,6 @@ input {
 
 .table {
   display: block; 
-  
   background-color: transparent;
   font-size: 20px; 
   color: rgb(139, 138, 143);
@@ -61,7 +61,7 @@ input {
 
 .table thead th { 
   color:rgb(179, 176, 190);
-  font-size: 24px; 
+  font-size: 24px;
 }
 
 tr:hover {
@@ -70,6 +70,7 @@ tr:hover {
 
 .navbar {
   background: #010101;
+  display: flex;
 }
 
 .signup {
@@ -89,6 +90,10 @@ tr:hover {
 }
 .welcome {
   font-size: 40px;
+  text-align: center;
+}
+
+.login-form {
   text-align: center;
 }
 
