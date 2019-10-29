@@ -21,6 +21,7 @@ const UserModel = require("../models/userModel");
 
   router.get('/logout', async (req, res, next) => {
     req.session.destroy();
+    console.log("logging out")
     res.status(200).redirect('/');
   })
   
@@ -65,23 +66,29 @@ const UserModel = require("../models/userModel");
   
     if (!! response.isValid) {
       const { id, first_name, last_name, role } = response;
+      console.log("response", response)
       req.session.is_logged_in = true;
       req.session.first_name = first_name;
       req.session.last_name = last_name;
       req.session.role = role;
       req.session.user_id = id;
+      console.log(req.session)
+
   
-    if(role == "buyer") {
-      res.status(200).redirect("/")
-    }
 
-    if(role == "rep") {
-      res.status(200).redirect("/")
-    }
+    res.status(200).redirect("/")
 
-    else{
-      res.sendStatus(401);
-    }
+    // if(role == "buyer") {
+    //   res.status(200).redirect("/")
+    // }
+
+    // if(role == "rep") {
+    //   res.status(200).redirect("/")
+    // }
+
+    // else{
+    //   res.sendStatus(401);
+    // }
   }
   });
 
