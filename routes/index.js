@@ -21,6 +21,7 @@ const UserModel = require("../models/userModel");
 
   router.get('/logout', async (req, res, next) => {
     req.session.destroy();
+    console.log(req.session.destroy());
     res.status(200).redirect('/');
   })
   

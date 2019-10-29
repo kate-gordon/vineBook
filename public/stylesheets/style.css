@@ -1,7 +1,9 @@
 html {
   background: rgb(14,0,4);
   background: linear-gradient(90deg, rgba(14,0,4,1) 0%, rgba(74,54,59,1) 35%);
-  background-size: cover;
+  background-size: contain; 
+  background-size: no-repeat; 
+
 }
 
 body {
@@ -34,6 +36,14 @@ p {
   font-size: 22px; 
 }
 
+select {
+  background: rgb(179, 176, 190); 
+}
+
+input {
+  background: rgb(179, 176, 190); 
+}
+
 .navbar-item {
   color:rgb(139, 138, 143); 
   font-size: 20px; 
@@ -41,6 +51,8 @@ p {
 
 
 .table {
+  display: block; 
+  
   background-color: transparent;
   font-size: 20px; 
   color: rgb(139, 138, 143);
@@ -68,6 +80,9 @@ tr:hover {
   padding: 20px; 
 }
 
+.button {
+  background: rgb(179, 176, 190); 
+}
 .signupBTN { 
   padding: 5px; 
   border-radius: 10%;
@@ -77,9 +92,28 @@ tr:hover {
   text-align: center;
 }
 
-.info-message {
-  text-align: center;
-  color: black;
-  font-size: 18px;
+.message-body {
+  background:rgb(179, 176, 190); 
 }
-
+@media screen and (max-width: 800px) {
+  tr { 
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0.5em 0;
+    border: 1px solid rgba(3,3,3,0.2);
+  }
+  td {
+    flex: 1 1 150px;
+    border: 0.5px solid rgba(3,3,3,0.2);
+  }
+  th {
+    display:none; 
+  }
+  select { 
+    border: 0.5px solid rgba(3,3,3,0.2);
+  }
+  input {
+    border: 0.5px solid rgba(3,3,3,0.2);
+  }
+}
