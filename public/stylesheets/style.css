@@ -30,6 +30,7 @@ header {
   justify-content: center; 
   font-size: 60px; 
   padding-bottom: 20px; 
+  padding-top: 20px; 
 }
 
 p {
@@ -52,7 +53,6 @@ input {
 
 .table {
   display: block; 
-  
   background-color: transparent;
   font-size: 20px; 
   color: rgb(139, 138, 143);
@@ -94,7 +94,9 @@ tr:hover {
 
 .message-body {
   background:rgb(179, 176, 190); 
+  padding: 40px; 
 }
+
 @media screen and (max-width: 800px) {
   tr { 
     display: flex; 
