@@ -17,7 +17,7 @@
     <a class="navbar-item" href="/">
       <img src="../images/DugkJmgi5C5SZfr4E9Wt0F6EQ.png" alt="Wine Bottle" width="38" height="28">
     </a>
-    <div class="navbar-burger burger has-dropdown is-hoverable" data-target="navbarExampleTransparentExample">
+    <div class="navbar-burger burger has-dropdown is-hoverable is-active" data-target="navbarExampleTransparentExample">
       <span></span>
       <span></span>
       <span></span>
@@ -31,7 +31,7 @@
       </a>
       <div id="" class="navbar-menu">
         <div class="navbar-start">
-          ${!!is_logged_in ? `
+          ${!!is_logged_in && role == 'buyer' ? `
           <a class="navbar-item" href="/masterlist">
             Master List
           </a>

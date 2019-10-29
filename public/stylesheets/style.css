@@ -12,8 +12,9 @@ body {
   
 }
 
-a {
-  color: rgb(179, 176, 190);
+a { 
+  color: rgb(179, 176, 190); 
+
 }
 
 h2 {
@@ -33,6 +34,10 @@ p {
   font-size: 22px; 
 }
 
+.navbar-item {
+  color:rgb(139, 138, 143); 
+  font-size: 20px; 
+}
 
 
 .table {
@@ -76,4 +81,9 @@ tr:hover {
   text-align: center;
   color: black;
   font-size: 18px;
+}
+
+.rep-list {
+  
+  
 }
