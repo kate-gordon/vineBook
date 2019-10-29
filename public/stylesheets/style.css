@@ -13,7 +13,7 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: rgb(179, 176, 190);
 }
 
 h2 {
@@ -70,4 +70,10 @@ tr:hover {
 .welcome {
   font-size: 40px;
   text-align: center;
+}
+
+.info-message {
+  text-align: center;
+  color: black;
+  font-size: 18px;
 }
