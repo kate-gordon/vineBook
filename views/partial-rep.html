@@ -8,10 +8,10 @@
     <tbody>
         ${userData.map(user => `
             <tr>
-                <td><a href="./rep/${user.id}">${user.first_name} ${user.last_name}</a>
+                <td><a href="./rep/${user.id}" style="text-transform: capitalize;">${user.first_name} ${user.last_name}</a>
                     
                 </td>
-                <td>${user.company}</td>
+                <td style="text-transform: capitalize;">${user.company}</td>
             </tr>
             `).join('')}
     </tbody>
