@@ -7,7 +7,7 @@ const UserModel = require("../models/userModel");
   router.get('/', async (req, res, next) => {
     res.render("template", {
       locals: {
-        title: "Login",
+        title: "Home",
         id: req.session.user_id,
         is_logged_in: req.session.is_logged_in,
         first_name: req.session.first_name,
