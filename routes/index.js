@@ -73,21 +73,18 @@ const UserModel = require("../models/userModel");
       req.session.user_id = id;
       console.log(req.session)
 
-  
 
-    res.status(200).redirect("/")
+    if(role == "buyer") {
+      res.status(200).redirect("/")
+    }
 
-    // if(role == "buyer") {
-    //   res.status(200).redirect("/")
-    // }
+    if(role == "rep") {
+      res.status(200).redirect("/")
+    }
 
-    // if(role == "rep") {
-    //   res.status(200).redirect("/")
-    // }
-
-    // else{
-    //   res.sendStatus(401);
-    // }
+    else{
+      res.sendStatus(401);
+    }
   }
   });
 
