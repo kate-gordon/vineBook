@@ -7,7 +7,7 @@ const express = require("express"),
     fileStore = require("session-file-store")(session);
 
 const indexRouter = require("./routes/index"),
-        masterListRouter = require("./routes/masterlist"), 
+        masterListRouter = require("./routes/masterList"), 
         buyerRouter = require("./routes/buyerList"),
         repRouter = require("./routes/rep"); 
     
