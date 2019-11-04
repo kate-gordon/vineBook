@@ -8,9 +8,9 @@ Vinebook is an application intended to streamline the process for businesses cur
 
 ## Technologies Used 
 
-Express 
-Node.js 
-PostgreSQL 
+* Express 
+* Node.js 
+* PostgreSQL 
 
 Written with: 
 
