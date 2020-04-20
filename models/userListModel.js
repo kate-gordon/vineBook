@@ -1,54 +1,52 @@
 const db = require("./conn");
 
 class UserList {
-    constructor(id, first_name) {
-        this.id = id;
-        this.first_name = first_name;
-    }
-    static async myList(id) { 
-        try {
-            const response = await db.any( 
-                `SELECT * FROM user_wine
+  constructor(id, first_name) {
+    this.id = id;
+    this.first_name = first_name;
+  }
+  static async myList(id) {
+    try {
+      const response = await db.any(
+        `SELECT * FROM user_wine
                 INNER JOIN wines
                 ON user_wine.wine_id = wines.id
                 WHERE user_id = ${id};
-                `)
-            console.log("response is ", response);
-            return response;  
-        } catch(err) {
-            return err.message;
-        }
+                `
+      );
+
+      return response;
+    } catch (err) {
+      return err.message;
     }
+  }
 
-       
-    static async getUserInfo() {
-        try {
-            const response = await db.any(
-                `SELECT * FROM users
-                WHERE role = 'buyer';`);
+  static async getUserInfo() {
+    try {
+      const response = await db.any(
+        `SELECT * FROM users
+                WHERE role = 'buyer';`
+      );
 
-            return response;
-
-        } catch(err) {
-            return err.message;
-        }
+      return response;
+    } catch (err) {
+      return err.message;
     }
+  }
 
-    static async getAccountInfo(id) {
-        try {
-            const response = await db.one(
-                `SELECT * FROM users
+  static async getAccountInfo(id) {
+    try {
+      const response = await db.one(
+        `SELECT * FROM users
                 WHERE id = ${id};
-                `);
-       
-            return response;
+                `
+      );
 
-        } catch(err) {
-            return err.message;
-        }
+      return response;
+    } catch (err) {
+      return err.message;
     }
+  }
 }
-
-
 
 module.exports = UserList;
