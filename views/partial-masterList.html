@@ -32,13 +32,13 @@ ${!!is_logged_in && role == 'rep' ? ` ` : `
                     <td>${wine.year}</td>
                     ${is_logged_in && role == 'rep' ? ` ` : `
                     <td>
-                        <select name="list_type">
-                            <option value="Have">Have</option>
-                            <option value="Need">Need</option>
+                        <select class="inventory-option" name="list_type">
+                            <option value="Have">HAVE</option>
+                            <option value="Need">WANT</option>
                         </select>
                     </td>
                     
-                            
+                         
                     <td><input class="add"type="submit" value="Add" name="add"></input></td>
 
                 </form>

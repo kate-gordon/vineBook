@@ -19,7 +19,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1em;
+  font-size: 1.5em;
 }
 
 p {
@@ -36,6 +36,12 @@ img {
 
 input {
   margin: 10px;
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 button {
@@ -55,6 +61,10 @@ button {
   font-size: 20px;
 }
 
+.wine-icon {
+  background: #590202;
+  border-radius: 50%;
+}
 
 /* Home Page */
 
@@ -111,6 +121,8 @@ button {
 }
 
 .demo-info {
+  border: solid 2px #590202;
+  padding: 10px;
   margin: 4rem;
 }
 
@@ -135,6 +147,7 @@ button {
 
 .signup-select {
   width: 100px;
+  font-size: 1em;
 }
 
 .signupBTN {
@@ -142,6 +155,17 @@ button {
 }
 
 /* End Signup Page */
+
+/* Buyer Inventory List Page */
+
+.list-section-header {
+  border: 2px solid #590202;
+}
+
+.inventory-option {
+  font-size: 1em;
+  font-weight: 600;
+}
 
 .table {
   display: block;
@@ -158,11 +182,6 @@ button {
 tr:hover {
   background-color: rgb(14, 0, 4);
 }
-
-
-
-
-
 
 .welcome {
   font-size: 40px;

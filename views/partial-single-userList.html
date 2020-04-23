@@ -1,46 +1,48 @@
-<p style="text-transform: capitalize;"> Account Name: ${userData.company}</p>
-<p style="text-transform: capitalize;"> Account Buyer: ${userData.first_name} ${userData.last_name}</p>
-    
-<h2>INVENTORY</h2>
+<p style="text-transform: capitalize;">Account Name: ${userData.company}</p>
+<p style="text-transform: capitalize;">
+  Account Buyer: ${userData.first_name} ${userData.last_name}
+</p>
+
+<div class="list-section-header"><h2>INVENTORY</h2></div>
 <table class="table">
-    <thead>
-        <tr>
-            <th>Producer</th>
-            <th>Varietals</th>
-            <th>Region</th>
-            <th>Country</th>
-            <th>Vintage</th>
-        </tr>
-    </thead>
-    <tbody>
+  <thead>
+    <tr>
+      <th>Producer</th>
+      <th>Varietals</th>
+      <th>Region</th>
+      <th>Country</th>
+      <th>Vintage</th>
+    </tr>
+  </thead>
+  <tbody>
     ${haveData.map(buyer => `
-        <tr>
-            <td>${buyer.producer}</td> 
-            <td>${buyer.varietals}</td> 
-            <td>${buyer.region}</td> 
-            <td>${buyer.country}</td> 
-            <td>${buyer.year}</td>
-        </tr>
+    <tr>
+      <td>${buyer.producer}</td>
+      <td>${buyer.varietals}</td>
+      <td>${buyer.region}</td>
+      <td>${buyer.country}</td>
+      <td>${buyer.year}</td>
+    </tr>
     `).join('')}
-    </tbody>
+  </tbody>
 </table>
 
-<h2>Looking For ...</h2>
+<h2 class="list-section-header">Looking For ...</h2>
 <table class="table">
-    <thead>
-        <tr>
-            <th>Varietals</th>
-            <th>Region</th>
-            <th>Country</th>
-        </tr>
-    </thead>
-    <tbody>
+  <thead>
+    <tr>
+      <th>Varietals</th>
+      <th>Region</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
     ${needData.map(buyer => `
-        <tr>
-            <td>${buyer.varietals}</td> 
-            <td>${buyer.region}</td> 
-            <td>${buyer.country}</td> 
-        </tr>
+    <tr>
+      <td>${buyer.varietals}</td>
+      <td>${buyer.region}</td>
+      <td>${buyer.country}</td>
+    </tr>
     `).join('')}
-    </tbody>
+  </tbody>
 </table>
