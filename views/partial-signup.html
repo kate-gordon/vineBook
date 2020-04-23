@@ -1,34 +1,32 @@
-<h2> SIGN UP FORM </h2>
-
 <div class="signup">
-<form action='/signup' method='POST'>
-    
-    <label> First Name 
-        <input type="text" aria-placeholder="First Name" name="first_name">
-    </label>
-   
+  <h2>SIGN UP</h2>
+  <form class="signup-form" action="/signup" method="POST">
     <label>
-        Last Name
-         <input type="text" aria-placeholder="Last Name" name="last_name">
+      First Name
+      <input type="text" aria-placeholder="First Name" name="first_name" />
     </label>
     <label>
-        Company
-        <input type="text" aria-placeholder="Company" name="company">
+      Last Name
+      <input type="text" aria-placeholder="Last Name" name="last_name" />
     </label>
     <label>
-        Email
-        <input type="text" aria-placeholder="Email" name="email">
+      Company
+      <input type="text" aria-placeholder="Company" name="company" />
     </label>
     <label>
-        Password
-    <input type="password" aria-placeholder="Password" name="password">
+      Email
+      <input type="text" aria-placeholder="Email" name="email" />
     </label>
     <label>
-    <select name="role">
-            <option value="rep">Rep</option>
-            <option value="buyer">Buyer</option>
-        </select>
+      Password
+      <input type="password" aria-placeholder="Password" name="password" />
+    </label>
+    <label>
+      <select class="signup-select" name="role">
+        <option value="rep">Rep</option>
+        <option value="buyer">Buyer</option>
+      </select>
     </label>
     <button class="signupBTN" type="submit">Submit</button>
-</form>
+  </form>
 </div>

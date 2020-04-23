@@ -1,18 +1,17 @@
 const express = require("express"),
-    path = require("path"),
-    cookieParser = require("cookie-parser"),
-    logger = require("morgan"),
-    es6Renderer = require("express-es6-template-engine"),
-    session = require("express-session"),
-    fileStore = require("session-file-store")(session);
+  path = require("path"),
+  cookieParser = require("cookie-parser"),
+  logger = require("morgan"),
+  es6Renderer = require("express-es6-template-engine"),
+  session = require("express-session"),
+  fileStore = require("session-file-store")(session);
 
 const indexRouter = require("./routes/index"),
-        masterListRouter = require("./routes/masterList"), 
-        buyerRouter = require("./routes/buyerList"),
-        repRouter = require("./routes/rep"); 
-    
+  masterListRouter = require("./routes/masterList"),
+  buyerRouter = require("./routes/buyerList"),
+  repRouter = require("./routes/rep");
 
-    require('dotenv').config();
+require("dotenv").config();
 
 const app = express();
 
@@ -26,19 +25,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(
-    session({
-        store: fileStore(session),
-        secret: process.env.SESSION_SECRET,
-        resave: false,
-        saveUninitialized: true,
-        is_logged_in: false,
-    })
+  session({
+    store: fileStore(session),
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    is_logged_in: false,
+  })
 );
-
 
 app.use("/", indexRouter);
 app.use("/masterList", masterListRouter);
 app.use("/buyerList", buyerRouter);
-app.use("/rep", repRouter); 
+app.use("/rep", repRouter);
 
 module.exports = app;

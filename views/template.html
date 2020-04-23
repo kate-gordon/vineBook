@@ -8,16 +8,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
         <link rel="stylesheet" href="../stylesheets/style.css">
-        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700&display=swap" rel="stylesheet">    </head>
-    <body>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">   
+      </head>
        
-<html class="has-navbar-fixed-top">
+<body class="has-navbar-fixed-top">
 <nav class="navbar is-transparent is-fixed-top">
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
       <img src="../images/DugkJmgi5C5SZfr4E9Wt0F6EQ.png" alt="Wine Bottle" width="38" height="28">
-    </a>
-    
+    </a> 
   </div>
   <div class="navbar-burger burger has-dropdown is-hoverable" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');" data-target="navbarExampleTransparentExample">
       <div class="burger-menu">
@@ -50,26 +49,18 @@
           <p class="control">
             ${!!is_logged_in && role == 'buyer' ? `
             <a class="bd-tw-button button" href="/buyerlist/${id}">
-              <span class="icon">
-                <i class="fab fa-twitter"></i>
-              </span>
+             
     
                 <span style="text-transform: capitalize;">${first_name}'s Wine List</span>
                 ` : !!is_logged_in && role == 'rep' ? `
                 <a class="bd-tw-button button" href="/rep">
-                  <span class="icon">
-                    <i class="fab fa-twitter"></i>
-                  </span>
-        
+               
                     <span style="text-transform: capitalize;">${first_name}'s Accounts</span>
                 ` : `
-                <a class="bd-tw-button button" href="/signup">
-                  <span class="icon">
-                    <i class="fab fa-twitter"></i>
-                  </span>
-              <span>
+                <a class="button is-dark" href="/signup">
+              
                 Sign Up
-              </span>
+              
               `}
             </a>
           </p>
@@ -80,10 +71,9 @@
                   </span>
               <span>Logout</span>
               ` : `
-              <a class="button is-dark" href="/">
-                <span class="icon">
-                </span>
-              <span>Login</span>
+              <a class="button is-dark" href="/login">
+                
+                Login
               `}
             </a>
           </p>
@@ -92,8 +82,6 @@
     </div>
   </div>
 </nav>
-
-
         <main class="container">${partial}</main>
     </body>
 </html>

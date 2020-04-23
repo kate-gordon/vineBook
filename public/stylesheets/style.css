@@ -1,126 +1,203 @@
 html {
-  background: rgb(14,0,4);
-  background: linear-gradient(90deg, rgba(14,0,4,1) 0%, rgba(74,54,59,1) 35%);
-  background-size: contain; 
-  background-size: no-repeat; 
-
+  background-color: #0D0D0D;
+  background-size: contain;
+  background-size: no-repeat;
 }
 
 body {
-  padding: 10px; 
+  color: #BABFBF;
   font: 18px;
-  font-family: 'Playfair Display', serif;
-  color: rgb(179, 176, 190); 
-  
+  font-family: "Montserrat", sans-serif;
 }
 
-a { 
-  color: rgb(179, 176, 190); 
-
+h1 {
+  font-size: 6em;
 }
 
 h2 {
-  font-size: 40px; 
-  display:flex; 
-  align-items: center; 
+  font-size: 2em;
 }
 
-header {
-  display: flex; 
-  justify-content: center; 
-  font-size: 60px; 
-  padding-bottom: 20px; 
-  padding-top: 40px;
+h3 {
+  font-size: 1em;
 }
 
 p {
-  font-size: 22px; 
+  font-size: 22px;
 }
 
 select {
-  background: rgb(179, 176, 190); 
+  background: rgb(179, 176, 190);
+}
+
+img {
+  height: 80vh;
 }
 
 input {
-  background: rgb(179, 176, 190); 
+  margin: 10px;
+}
+
+button {
+  background: rgb(179, 176, 190);
+  width: 200px;
+}
+
+/* Navbar */
+
+.navbar {
+  background: #0D0D0D;
+  display: flex;
 }
 
 .navbar-item {
-  color:rgb(139, 138, 143); 
-  font-size: 20px; 
+
+  font-size: 20px;
 }
 
+
+/* Home Page */
+
+.grid-container {
+  height: 100vh;
+  display: grid;
+  grid-template:
+    "barrels header"
+    "barrels intro";
+  grid-gap: 10px;
+  align-content: center;
+
+}
+
+.logo-header {
+  grid-area: header;
+  align-self: center;
+  padding: 10px;
+  margin: 20px;
+  border-bottom: solid 2px #590202;
+
+}
+
+.barrels {
+  grid-area: barrels;
+}
+
+.intro {
+  grid-area: intro;
+  align-self: start;
+
+  padding: 10px;
+  margin: 20px;
+}
+
+/* End Home Page */
+
+/* Login Page */
+
+.login-page {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  border-top: solid 2px #590202;
+}
+
+.demo-info {
+  margin: 4rem;
+}
+
+
+/* End Login Page */
+
+/* Signup Page */
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.signup-form {
+  border-top: solid 2px #590202;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-select {
+  width: 100px;
+}
+
+.signupBTN {
+  margin: 10px;
+}
+
+/* End Signup Page */
 
 .table {
-  display: block; 
+  display: block;
   background-color: transparent;
-  font-size: 20px; 
+  font-size: 20px;
   color: rgb(139, 138, 143);
-  
 }
 
-.table thead th { 
-  color:rgb(179, 176, 190);
+.table thead th {
+  color: rgb(179, 176, 190);
   font-size: 24px;
 }
 
 tr:hover {
-  background-color:rgb(14,0,4); 
+  background-color: rgb(14, 0, 4);
 }
 
-.navbar {
-  background: #010101;
-  display: flex;
-}
 
-.signup {
-  display:flex; 
-  flex-direction:column; 
-  justify-content: center;
-  align-items: center; 
-  padding: 20px; 
-}
 
-.button {
-  background: rgb(179, 176, 190); 
-}
-.signupBTN { 
-  padding: 5px; 
-  border-radius: 10%;
-}
+
+
+
 .welcome {
   font-size: 40px;
   text-align: center;
 }
 
-.login-form {
-  text-align: center;
-}
 
 .message-body {
-  background:rgb(179, 176, 190); 
-  padding: 40px; 
+  background: rgb(179, 176, 190);
+  padding: 40px;
 }
 
 @media screen and (max-width: 800px) {
-  tr { 
-    display: flex; 
+  tr {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 0.5em 0;
-    border: 1px solid rgba(3,3,3,0.2);
+    border: 1px solid rgba(3, 3, 3, 0.2);
   }
+
   td {
     flex: 1 1 150px;
-    border: 0.5px solid rgba(3,3,3,0.2);
+    border: 0.5px solid rgba(3, 3, 3, 0.2);
   }
+
   th {
-    display:none; 
+    display: none;
   }
-  select { 
-    border: 0.5px solid rgba(3,3,3,0.2);
+
+  select {
+    border: 0.5px solid rgba(3, 3, 3, 0.2);
   }
+
   input {
-    border: 0.5px solid rgba(3,3,3,0.2);
+    border: 0.5px solid rgba(3, 3, 3, 0.2);
   }
 }

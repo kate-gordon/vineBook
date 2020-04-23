@@ -14,6 +14,21 @@ router.get("/", async (req, res, next) => {
       role: req.session.role,
     },
     partials: {
+      partial: "partial-home",
+    },
+  });
+});
+
+router.get("/login", async (req, res, next) => {
+  res.render("template", {
+    locals: {
+      title: "Login",
+      id: req.session.user_id,
+      is_logged_in: req.session.is_logged_in,
+      first_name: req.session.first_name,
+      role: req.session.role,
+    },
+    partials: {
       partial: "partial-login",
     },
   });

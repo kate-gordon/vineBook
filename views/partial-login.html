@@ -1,23 +1,34 @@
-<header> VineBook </header>
+<div class="login-page">
+  ${!!is_logged_in ? `
 
-<style>
-html {
-     background: url("./images/daniel-vogel-NUD6cWNdBv8-unsplash.jpg");
+  <h1 class="welcome">Welcome, ${first_name}</h1>
 
-}
-</style>
- ${!!is_logged_in ? `
-    
-    <h1 class = "welcome">Welcome, ${first_name}</h1>
+  ` : `
 
-    ` : `   
-<form class="login-form" action="/" method="POST">
-    <label>Email Address
-        <input type="text" aria-placeholder="Email Address" name="email">
-    </label>
-    <label class="input-login">Password
-        <input type="password" aria-placeholder="Password" name="password">
-    </label>
-    <button type="submit">Login</button>
-</form>
-`}
+  <h2>Login</h2>
+  <form class="login-form" action="/" method="POST">
+    <input
+      type="text"
+      aria-placeholder="Email Address"
+      placeholder="Email"
+      name="email"
+    />
+    <input
+      type="password"
+      aria-placeholder="Password"
+      placeholder="Password"
+      name="password"
+    />
+    <button type="submit">LOGIN</button>
+  </form>
+
+  <div class="demo-info">
+    <h3>For Demo: Buyer</h3>
+    <p>
+      Email: cptnmarv@aol.com <br />
+      Password: nineinchnails
+    </p>
+  </div>
+
+  `}
+</div>
