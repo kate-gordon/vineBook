@@ -1,6 +1,6 @@
 # VineBook
 
-This is an application built for a Backend group project at DigitalCrafts. Development lasted from 10/23 - 10/29.
+This application was built with a team of two others. Development lasted from 10/23 - 10/29.
 
 ## Description
 
@@ -26,9 +26,10 @@ Written with:
 
 ## Authors
 
+- Kate Gordon [Github Link](https://github.com/kate-gordon)
 - Joseph Fitzpatrick [Github Link](https://github.com/joeyf116)
 - Felipe Dunbar [Github Link](https://github.com/FelipeD97)
-- Kate Gordon [Github Link](https://github.com/kate-gordon)
+
 
 ## Credit
 
